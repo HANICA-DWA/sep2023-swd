@@ -1,13 +1,13 @@
 # Unit 1: JavaScript
 
-- [Session 1-1: JavaScript Basics & Functions](#session-1-1-javascript-basics--functions)
+- [Session 1-1: JavaScript Basics \& Functions](#session-1-1-javascript-basics--functions)
   - [Voorbereiding 1: Lees twee hoofdstukken uit _Eloquent JavaScript_](#voorbereiding-1-lees-twee-hoofdstukken-uit-eloquent-javascript)
-  - [Voorbereiding 2: Q & A](#voorbereiding-2-q--a)
+  - [Voorbereiding 2: Q \& A](#voorbereiding-2-q--a)
   - [Lesplan](#lesplan)
   - [Assignment](#assignment)
-- [Session 1-2: Objects & Arrays](#session-1-2-objects--arrays)
+- [Session 1-2: Objects \& Arrays](#session-1-2-objects--arrays)
   - [Voorbereiding 1: Lees hoofdstuk 4 uit _Eloquent JavaScript_](#voorbereiding-1-lees-hoofdstuk-4-uit-eloquent-javascript)
-  - [Voorbereiding 2: Q & A](#voorbereiding-2-q--a-1)
+  - [Voorbereiding 2: Q \& A](#voorbereiding-2-q--a-1)
   - [Lesplan](#lesplan-1)
   - [Assignment](#assignment-1)
 - [Session 1-3: Small-test](#session-1-3-small-test)
@@ -61,7 +61,7 @@ deze pagina](https://dwa-courses.firebaseapp.com/qna_swd_1.2.html)
 - **Q & A bespreking** — We proberen zoveel mogelijk vragen/discussiepunten van jullie te bespreken in de beschikbare tijd.
 - **Huiswerkbespreking** — Feedback en nadere uitleg over de oefeningen uit de tekst.
 - **Nieuwe stof**
-  - [Uitleg over Exceptions (chapter 8)](https://dwa-courses.firebaseapp.com/08_error.html#h_iwwPbaBjJD)
+  - [Uitleg over Exceptions (chapter 8)](https://dwa-courses.firebaseapp.com/08_error.html#h_zT3755/aOp)
   - Oefeningen met exceptions
 
 ### Assignment
