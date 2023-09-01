@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Once upon a time</title>
+    </head>
+    <body>
+        <script src='./incrementor.js'></script>
+        <script>
+            //zo moet het 
+            console.log(increment());
+            
+            console.log(value); //Dit wil je niet echt
+            value = 100; //Dit wil je echt niet
+            console.log(value); 
+            value = undefined; //Dit wil je al helemaal niet
+            increment(); //Nu gaat dit ook fout
+            console.log(value); 
+
+        </script> 
+        
+    </body>
+</html>
