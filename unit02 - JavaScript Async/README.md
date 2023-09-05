@@ -2,12 +2,12 @@
 
 - [Session 2-1: JavaScript Asynchrone Callbacks](#session-2-1-javascript-asynchrone-callbacks)
   - [Voorbereiding 1: Lees hoofdstuk 11 uit _Eloquent JavaScript_](#voorbereiding-1-lees-hoofdstuk-11-uit-eloquent-javascript)
-  - [Voorbereiding 2: Q & A](#voorbereiding-2-q--a)
+  - [Voorbereiding 2: Q \& A](#voorbereiding-2-q--a)
   - [Lesplan](#lesplan)
   - [Assignment: Unit 2a - ICA Adventure met Asynchronous Callbacks](#assignment-unit-2a---ica-adventure-met-asynchronous-callbacks)
-- [Session 2-2: Promises, Async & Await](#session-2-2-promises-async--await)
+- [Session 2-2: Promises, Async \& Await](#session-2-2-promises-async--await)
   - [Voorbereiding 1: Lees (verder) hoofdstuk 11 uit _Eloquent JavaScript_](#voorbereiding-1-lees-verder-hoofdstuk-11-uit-eloquent-javascript)
-  - [Voorbereiding 2: Q & A](#voorbereiding-2-q--a-1)
+  - [Voorbereiding 2: Q \& A](#voorbereiding-2-q--a-1)
   - [Lesplan](#lesplan-1)
   - [Assignment: Unit 2b en 2c - ICA Adventure met Promises en Async/Await](#assignment-unit-2b-en-2c---ica-adventure-met-promises-en-asyncawait)
 - [Session 2-3: Small-test](#session-2-3-small-test)
@@ -73,10 +73,10 @@ In de les krijg je een korte uitleg over de aanpassingen die je moet maken.
 
 De onderstaande onderdelen kunnen aan bod komen tijdens de small-test:
 
-- [Hoofdstuk 11 van Eloquent JavaScript](<(https://dwa-courses.firebaseapp.com/11_async.html)>).
+- [Hoofdstuk 11 van Eloquent JavaScript](https://dwa-courses.firebaseapp.com/11_async.html).
 - [Film over de event loop](https://youtu.be/8aGhZQkoFbQ).
-- Stuk over Aync/Await.
-- Voorbeelden uit de les over het gooien van errors in asynchrone code.
+- Stuk over [Aync/Await](./session2-2/_nieuw_materiaal/async_await.md) [[.pdf]](./session2-2/\_nieuw_materiaal/async_await.pdf)
+- Voorbeelden uit de les over het gooien van [errors in asynchrone code](./session2-1/_nieuw_materiaal/asynchrone_error_handling).
 
 Zorg er daarbij voor dat je de onderstaande gaten goed weet en snapt:
 
