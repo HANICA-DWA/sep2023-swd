@@ -58,7 +58,7 @@ deze pagina](https://dwa-courses.firebaseapp.com/qna_swd_2.2.html)
 - **Q & A bespreking** — We proberen zoveel mogelijk vragen/discussiepunten van jullie te bespreken in de beschikbare tijd.
 - **Huiswerkbespreking** — Feedback en nadere uitleg over de oefeningen uit de tekst.
 - **Nieuwe stof**
-  - Async/Await. De tekst wordt na de les in de repo geplaatst.
+  - [Async/Await](./session2-2/_nieuw_materiaal/async_await.md) _[[.pdf](./session2-2/_nieuw_materiaal/async_await.pdf)]_
 
 ### Assignment: Unit 2b en 2c - ICA Adventure met Promises en Async/Await
 
@@ -75,7 +75,7 @@ De onderstaande onderdelen kunnen aan bod komen tijdens de small-test:
 
 - [Hoofdstuk 11 van Eloquent JavaScript](https://dwa-courses.firebaseapp.com/11_async.html).
 - [Film over de event loop](https://youtu.be/8aGhZQkoFbQ).
-- Stuk over [Aync/Await](./session2-2/_nieuw_materiaal/async_await.md) [[.pdf]](./session2-2/\_nieuw_materiaal/async_await.pdf)
+- Stuk over [Async/Await](./session2-2/_nieuw_materiaal/async_await.md) _[[.pdf](./session2-2/_nieuw_materiaal/async_await.pdf)]_
 - Voorbeelden uit de les over het gooien van [errors in asynchrone code](./session2-1/_nieuw_materiaal/asynchrone_error_handling).
 
 Zorg er daarbij voor dat je de onderstaande gaten goed weet en snapt:
