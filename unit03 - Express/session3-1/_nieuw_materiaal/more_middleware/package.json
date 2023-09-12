@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "app1": "npx nodemon app1.js",
+    "app2": "npx nodemon app2.js",
+    "app3": "npx nodemon app3.js"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
