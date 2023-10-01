@@ -9,8 +9,7 @@
 - [03 - Express](unit03%20-%20Express/README.md)
 - [04 - Sessions and Rest](unit04%20-%20Sessions%20and%20Rest/README.md)
 - [05 - Websockets](unit05%20-%20Websockets/README.md)
-- 06 - MongoDB and Mongoose
-<!-- - [06 - MongoDB and Mongoose](unit06%20-%20MongoDB%20and%20Mongoose/README.md) -->
+- [06 - MongoDB and Mongoose](unit06%20-%20MongoDB%20and%20Mongoose/README.md)
 
 ## Final Assignment
 
