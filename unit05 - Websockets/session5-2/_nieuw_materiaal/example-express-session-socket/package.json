@@ -1,9 +1,23 @@
 {
   "name": "example-express-session-socket",
   "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon index.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public/*"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "express-session": "^1.16.2",
+    "uuid": "^9.0.1",
     "ws": "^7.1.2"
   }
 }

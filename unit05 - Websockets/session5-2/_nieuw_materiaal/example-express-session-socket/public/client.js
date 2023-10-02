@@ -42,11 +42,7 @@
       ws.close();
     }
 
-    // Deze URL die de client moet gebruiken wordt bepaald op twee plekken in de server code.
-    // Hieronder zie je de regels die ervoor verantwoordelijg zijn:
-    // ... new ws.Server({ noServer: true , path: '/example'});
-    // httpServer.listen(3000, ..
-    ws = new WebSocket("ws://localhost:3000/example");
+    ws = new WebSocket("ws://localhost:3000");
 
     ws.onerror = function () {
       showMessage("WebSocket error");

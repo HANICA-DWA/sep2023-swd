@@ -1,85 +1,83 @@
-'use strict';
+"use strict";
 
-const session = require('express-session');
-const express = require('express');
-const http = require('http');
-const uuid = require('uuid');
+const express = require("express");
+const session = require("express-session");
+const http = require("http");
+const uuid = require("uuid");
+const ws = require("ws");
 
-const WebSocket = require('ws');
+const $log = console.log;
 
+//
+// create express, http and websocket servers
+//
 const app = express();
+const httpServer = http.createServer(app);
+const wsServer = new ws.Server({ noServer: true });
 
-//
-// We need the same instance of the session parser in express and
-// WebSocket server.
-//
+// we must use the same instance of the session parser
+// in both express and the websocket server
 const sessionParser = session({
   saveUninitialized: false,
-  secret: '$eCuRiTy',
-  resave: false
+  secret: "$eCuRiTy",
+  resave: false,
 });
 
 //
-// Serve static files from the 'public' folder.
+// express app
 //
-app.use(express.static('public'));
+app.use(express.static("public")); // serve static files from the 'public' folder
 app.use(sessionParser);
 
-app.post('/login', function(req, res) {
-  //
-  // "Log in" user and set userId to session.
-  //
-  const id = uuid.v4();
+app.post("/login", (request, response) => {
+  // fake 'log in': generate id and set as `userId` in session
+  request.session.userId = uuid.v4();
 
-  console.log(`Updating session for user ${id}`);
-  req.session.userId = id;
-  res.send({ result: 'OK', message: 'Session updated' });
+  $log(`Updating session [user: ${request.session.userId}]`);
+  response.send({ result: "OK", message: "Session updated" });
 });
 
-app.delete('/logout', function(request, response) {
-  console.log('Destroying session');
-  request.session.destroy(function() {
-    response.send({ result: 'OK', message: 'Session destroyed' });
+app.delete("/logout", (request, response) => {
+  $log("Destroying session");
+  request.session.destroy(() => {
+    response.send({ result: "OK", message: "Session destroyed" });
   });
 });
 
 //
-// Create HTTP server by ourselves.
+// http server
 //
-const server = http.createServer(app);
-const wss = new WebSocket.Server({ noServer: true });
-
-server.on('upgrade', function(request, socket, head) {
-  console.log('Parsing session from request...');
+httpServer.on("upgrade", (request, socket, head) => {
+  $log("Parsing session");
 
   sessionParser(request, {}, () => {
-    if (!request.session.userId) {
+    $log("Session is parsed");
+    if (request.session.userId) {
+      $log("Acces is accepted");
+      wsServer.handleUpgrade(request, socket, head, (ws) => {
+        wsServer.emit("connection", ws, request);
+      });
+    } else {
+      $log("Acces is denied");
       socket.destroy();
       return;
     }
-
-    console.log('Session is parsed!');
-
-    wss.handleUpgrade(request, socket, head, function(ws) {
-      wss.emit('connection', ws, request);
-    });
-  });
-});
-
-wss.on('connection', function(ws, request) {
-  ws.on('message', function(message) {
-    //
-    // Here we can now use session parameters.
-    //
-    console.log(
-      `Received message ${message} from user ${request.session.userId}`
-    );
   });
 });
 
 //
-// Start the server.
+// websocket server
 //
-server.listen(8080, function() {
-  console.log('Listening on http://localhost:8080');
+wsServer.on("connection", (ws, request) => {
+  ws.on("message", (message) => {
+    // use session parameters
+    $log(`Received message "${message}" [user: ${request.session.userId}]`);
+  });
+});
+
+//
+// start the server
+//
+httpServer.listen(3000, () => {
+  $log("Listening on http://localhost:3000");
 });
