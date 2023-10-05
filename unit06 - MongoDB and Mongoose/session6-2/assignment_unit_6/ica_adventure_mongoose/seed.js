@@ -1,79 +1,95 @@
-const mongoose = require('mongoose');
-require('./model/location');
-require('./model/player');
+"use strict";
 
-const dbName = 'ica-adventure';
+const mongoose = require("mongoose");
+require("./model/location");
+require("./model/player");
 
-const db = mongoose.connection;
-const Location = mongoose.model('Location');
-const Player = mongoose.model('Player');
+const Location = mongoose.model("Location");
+const Player = mongoose.model("Player");
 
-mongoose.connect(`mongodb://localhost:27017/${dbName}`,  {useNewUrlParser: true } ).then(() => {
-    return seedLocation();
-}).then(() => {
-//    return seedPlayer();
-}).catch(err => {
-    console.log(err);
-}).then(() => {
-    db.close();
-});
+const $log = console.log;
 
+//
+// main program
+//
+main().catch($log);
+
+async function main() {
+  $log("> connecting");
+  const db = await mongoose.connect(`mongodb://127.0.0.1:27017/ica-adventure`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  $log("> connected");
+  try {
+    $log("> seeding");
+    await seed();
+  } finally {
+    await db.disconnect();
+    $log("> done");
+  }
+}
+
+//
+// seeding
+//
+async function seed() {
+  await seedLocation();
+  await seedPlayer();
+}
 
 async function seedLocation() {
-    await Location.deleteMany();
-    
-    await Location.insertMany([
-        {
-            _id: 'forest',
-            description: 'a forest',
-            exits: ['town']
-        },
-        {
-            _id: 'town',
-            description: 'a town',
-            exits: ['forest','mountain']
-        },
-        {
-            _id: 'mountain',
-            description: 'a mountain range',
-            exits: ['town']
-        }
-    ]);
+  await Location.deleteMany();
+
+  await Location.insertMany([
+    {
+      _id: "forest",
+      description: "a forest",
+      exits: ["town"],
+    },
+    {
+      _id: "town",
+      description: "a town",
+      exits: ["forest", "mountain"],
+    },
+    {
+      _id: "mountain",
+      description: "a mountain range",
+      exits: ["town"],
+    },
+  ]);
 }
 
 async function seedPlayer() {
-    await Player.deleteMany();
+  await Player.deleteMany();
 
-    await Player.insertMany([
+  await Player.insertMany([
+    {
+      _id: "han",
+      currentLocation: "forest",
+      map: [
         {
-            _id: 'han',
-            currentLocation: 'forest',
-            map: [
-                {
-                    _id: 'town',
-                    description: 'a town',
-                    exits: ['forest', 'mountain']
-                },
-                {
-                    _id: 'forest',
-                    description: 'a forest',
-                    exits: ['town'] 
-                }
-            ]
+          _id: "town",
+          description: "a town",
+          exits: ["forest", "mountain"],
         },
         {
-            _id: 'femke',
-            currentLocation: 'town',
-            map: [
-                {
-                    _id: 'town',
-                    description: 'a town',
-                    exits: ['forest', 'mountain']
-                }
-            ]
-        }
-    ]);
+          _id: "forest",
+          description: "a forest",
+          exits: ["town"],
+        },
+      ],
+    },
+    {
+      _id: "femke",
+      currentLocation: "town",
+      map: [
+        {
+          _id: "town",
+          description: "a town",
+          exits: ["forest", "mountain"],
+        },
+      ],
+    },
+  ]);
 }
-
-
-
