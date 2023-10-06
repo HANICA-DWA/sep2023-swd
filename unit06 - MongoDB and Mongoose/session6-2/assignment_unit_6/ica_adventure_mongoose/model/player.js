@@ -2,14 +2,26 @@
 
 const mongoose = require("mongoose");
 
-const playerSchema = new mongoose.Schema({
-  /* TODO: ASSIGNMENT 6A */
-});
+const Location = require("./location");
 
-playerSchema.methods.getLocationInformation = async function () {
-  /* TODO: ASSIGNMENT 6B */
-};
+const name = "Player";
+const schema = new mongoose.Schema(
+  {
+    /* TODO: ASSIGNMENT 6A */
+  },
+  {
+    methods: {
+      async getLocationInformation() {
+        /* TODO: ASSIGNMENT 6B */
+      },
 
-playerSchema.methods.goToLocation = async function (newLocationName) {
-  /* TODO: ASSIGNMENT 6C */
-};
+      async goToLocation(name) {
+        /* TODO: ASSIGNMENT 6C */
+      },
+    },
+  }
+);
+
+const model = mongoose.model(name, schema);
+
+module.exports = model;

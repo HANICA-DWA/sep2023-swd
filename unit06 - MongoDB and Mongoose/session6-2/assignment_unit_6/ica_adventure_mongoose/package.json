@@ -7,11 +7,12 @@
   "license": "ISC",
   "scripts": {
     "start": "npx nodemon app.js",
-    "test": "npm run seed; npx nodemon tests.js",
-    "seed": "node seed.js"
+    "test": "node tests.js",
+    "seed": "node seed.js",
+    "watch": "npx nodemon --exec 'npm run seed && npm test'"
   },
   "dependencies": {
-    "express": "^4.16.4",
-    "mongoose": "^5.3.1"
+    "express": "^4.18.2",
+    "mongoose": "^7.5.4"
   }
 }

@@ -2,6 +2,11 @@
 
 const mongoose = require("mongoose");
 
-const locationSchema = new mongoose.Schema({
+const name = "Location";
+const schema = new mongoose.Schema({
   /* TODO: ASSIGNMENT 6A */
 });
+
+const model = mongoose.model(name, schema);
+
+module.exports = model;

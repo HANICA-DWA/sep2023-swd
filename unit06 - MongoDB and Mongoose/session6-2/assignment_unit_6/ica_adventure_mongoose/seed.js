@@ -1,26 +1,20 @@
 "use strict";
 
 const mongoose = require("mongoose");
-require("./model/location");
-require("./model/player");
 
-const Location = mongoose.model("Location");
-const Player = mongoose.model("Player");
-
-const $log = console.log;
+const Location = require("./model/location");
+const Player = require("./model/player");
 
 //
 // main program
 //
-main().catch($log);
+main(console.log).catch(console.log);
 
-async function main() {
+async function main($log) {
   $log("> connecting");
-  const db = await mongoose.connect(`mongodb://127.0.0.1:27017/ica-adventure`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  const db = await mongoose.connect(`mongodb://127.0.0.1:27017/ica-adventure`);
   $log("> connected");
+
   try {
     $log("> seeding");
     await seed();

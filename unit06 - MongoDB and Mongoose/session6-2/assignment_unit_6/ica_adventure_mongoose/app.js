@@ -2,18 +2,21 @@
 
 const mongoose = require("mongoose");
 const express = require("express");
-const bodyParser = require("body-parser");
 
 const actionsRouter = require("./routes/actions");
 
+const host = process.env.HOST || "127.0.0.1";
+const port = process.env.PORT || 3000;
+
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 app.use("/", actionsRouter);
 
-const server = app.listen(3000, () => {
-  mongoose.connect(
-    `mongodb://127.0.0.1:27017/ica-adventure`,
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    () => console.log(`game server started on port ${server.address().port}`)
-  );
+const server = app.listen(port, host, async () => {
+  console.log("> connecting");
+  await mongoose.connect(`mongodb://${host}:27017/ica-adventure`);
+  console.log("> connected");
+
+  const { address, port } = server.address();
+  console.log(`Game server started on http://${address}:${port}`);
 });
