@@ -13,5 +13,4 @@
 
 ## Final Assignment
 
-- Quizzer
-<!-- - [Quizzer](quizzer) -->
+- [Quizzer](quizzer/README.md)
